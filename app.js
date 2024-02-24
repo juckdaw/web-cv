@@ -19,7 +19,15 @@ cards.forEach(card => {
             card.classList.add('pulse');
         }
     });
+    card.addEventListener('touchstart', () => {
+        if(!card.classList.contains('active')) {
+            card.classList.add('pulse');
+        }
+    });
     card.addEventListener('mouseout', () => {
+        card.classList.remove('pulse');
+    });
+    card.addEventListener('touchend', () => {
         card.classList.remove('pulse');
     });
 });
