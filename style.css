@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Work+Sans&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+    font-family: 'DM Mono', monospace;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 150px;
+}
+
+header {
+    margin: 100px 0px 100px 0px;
+    text-align: right;
+    color: white;
+}
+
+h1, h2 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 1;
+    transition: all 200ms ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        text-align: center;
+    }
+    .card-container {
+        flex-direction: column;
+        height: 1000px;
+    }
+    .subject {
+        padding-top: 130px !important;
+    }
+}
+
+.card {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    transition: all 400ms cubic-bezier(.68,-0.35,.27,1.35), box-shadow 0ms;
+    transform: rotate(180deg);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    margin-bottom: 40px;
+}
+
+.card:hover .subject {
+    margin-bottom: -18px;
+}
+
+.pulse {
+    animation: pulse 900ms infinite;
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    }
+}
+
+.active {
+    height: 450px;
+    width: 300px;
+    border-radius: 20px;
+    transform: rotate(0deg);
+}
+
+.content {
+    display: none;
+    width: 80%;
+    height: inherit;
+}
+
+.active .content {
+    display: block;
+    animation: hideContent 300ms forwards;
+}
+
+@keyframes hideContent {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.subject {
+    text-align: center;
+    transform: rotate(180deg);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    padding-top: 150px;
+    opacity: 1;
+    transition: all 200ms cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.active .subject {
+    opacity: 0;
+}
+
+#card-1 {
+    background-color: #ffc09f;
+    box-shadow: 0 0 0 0 #ffc09f;
+}
+
+#card-2 {
+    background-color: #ffee93;
+    box-shadow: 0 0 0 0 #ffee93;
+}
+
+#card-3 {
+    background-color: #fcf5c7;
+    box-shadow: 0 0 0 0 #fcf5c7;
+}
+
+#card-4 {
+    background-color: #a0ced9;
+    box-shadow: 0 0 0 0 #a0ced9;
+}
